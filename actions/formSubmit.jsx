@@ -23,7 +23,7 @@ export async function formSubmit(formData) {
 
     await newMessage.save();
 
-    const transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({ 
       host: process.env.EMAIL_HOST,
       port: process.env.EMAIL_PORT,
       secure: false, // true for port 465, false for 587

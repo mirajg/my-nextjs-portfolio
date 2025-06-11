@@ -7,14 +7,14 @@ import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
 import SendMeMessage from '@/components/SendMeMessage'
 
-const page = () => {
+const page = () => { 
   return (
     <div>
       <Navbar />
       <Hero />
       <AboutPage />
       <SendMeMessage /> 
-      <Contact />
+      <Contact /> 
       <Footer /> 
     </div>
   )

@@ -1,27 +1,27 @@
 
-'use client'; // make this a client component
+'use client'; // must be a client component
 
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // ← don't forget this
 import { formSubmit } from '../actions/formSubmit';
 
 const SendMeMessage = () => {
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
     const formData = new FormData(e.target);
-
     const response = await formSubmit(formData);
-
     setIsLoading(false);
 
     if (response.success) {
-      alert('Message sent successfully!');
+      toast.success('✅ Message sent successfully!');
       e.target.reset();
     } else {
-      alert('Failed to send message. Please try again.');
+      toast.error('❌ Failed to send message. Please try again.');
     }
   };
 
@@ -90,6 +90,9 @@ const SendMeMessage = () => {
           {isLoading ? 'Sending...' : 'Send Message'}
         </button>
       </form>
+
+      {/* Toast Container */}
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
     </div>
   );
 };
