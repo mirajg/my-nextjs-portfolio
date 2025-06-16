@@ -10,7 +10,7 @@ const toggleTheme = () => {
   const newIsSun = !isSun;
 
   // Instant change before React re-renders
-  if (!newIsSun) {
+  if (!newIsSun) { 
     root.style.setProperty('--background', '#000000');
     root.style.setProperty('--foreground', '#ffffff');
   } else {
@@ -56,7 +56,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="#home" className="flex items-center">
           <Image src="/logo.png" alt="Logo" width={40} height={40} loading="eager" />
-          <span className="ml-2 font-bold text-xl text-blue-700 tracking-wide">Miraj<span className="text-[color:var(--accent)]">.</span> </span>
+          <span className="ml-2 font-bold text-xl text-blue-700 tracking-wide">Miraj<span className="text-[red]">.</span> </span>
         </Link>
 
         {/* Hamburger Icon */}
